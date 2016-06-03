@@ -17,7 +17,7 @@ $vmSize = "Standard_A2"
 $user = "localadmin"
 $password = 'Xodh!220'
 
-## 이미지 경
+## 이미지 경로
 $urlOfCapturedImageVhd = "https://taeyostudy.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/template-osDisk.7a38ab93-9215-48b1-813d-a612d3fcf325.vhd"
 ###########################################################
 $osDiskName = $vmName + "_osDisk"
