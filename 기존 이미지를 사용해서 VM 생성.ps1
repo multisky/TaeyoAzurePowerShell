@@ -27,7 +27,7 @@ $interfaceName = $vmname + "_Interface"
 ###########################################################
 
 ## 구독 설정
-Get-AzureRmSubscription –SubscriptionName $subscriptionName | Select-AzureRmSubscription
+Select-AzureRmSubscription –SubscriptionName $subscriptionName
 
 $storageAccount = Get-AzureRmStorageAccount | ? StorageAccountName -EQ $storageAccountName
 

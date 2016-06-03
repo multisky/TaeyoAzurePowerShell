@@ -10,7 +10,7 @@ $vmname = "<만들어질 VM 이름">     # "PlzRemove"
 
 $imageName = $vmname + "_CapturedImage"
 
-Get-AzureRmSubscription –SubscriptionName $subscr | Select-AzureRmSubscription
+Select-AzureRmSubscription –SubscriptionName $subscriptionName
 
 # Deallocate the virtual machine
 Stop-AzureRmVM -ResourceGroupName $resourceGroupName -Name $vmname 
