@@ -14,4 +14,4 @@
     - 위의 'ARM에서 sysprerp하는 방법'을 따라 캡춰된 이미지를 사용해야 함
     
 ----
-    도움 : 성지용 
+    도움 : [성지용](https://github.com/jiyongseong) 
