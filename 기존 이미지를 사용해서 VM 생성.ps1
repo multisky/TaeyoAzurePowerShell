@@ -3,22 +3,24 @@ Login-AzureRmAccount
 
 ###########################################################
 ## 이 부분은 직접 자신에 맞게 변수값을 설정해 줘야 한다.
-$subscriptionName = "BizSpark"
-$resourceGroupName = "rg-jw-taeyo-study"
-$location = "japan west"
-$VNetName = "vn-jw-taeyo-test"
+$subscriptionName = "<구독이름>" # "MyMSDN"
+$resourceGroupName = "<리소스 그룹 이름"> # "rg-jw-taeyo-study"
+$location = "<위치">  # japan west"
+$VNetName = "<가상 네트워크 이름>"  # vn-jw-taeyo-test"
 $storageAccountName = "taeyostudy"
 
 ## 만들 VM의 이름과 크기
-$vmname = "PlzRemoveXXX"
-$vmSize = "Standard_A2"
+$vmname = "<만들어질 VM 이름">     # "PlzRemove"
+$vmSize = "<만들어질 VM 크기">     # "Standard_A2"
 
 ## 만들 관리자 계정
-$user = "localadmin"
-$password = 'Xodh!220'
+$user = "<만들어질 관리자 아이디>"          # "localadmin"
+$password = "<만들어질 관리자 비밀번호>"    # "Xodh!220""
 
 ## 이미지 경로
-$urlOfCapturedImageVhd = "https://taeyostudy.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/template-osDisk.7a38ab93-9215-48b1-813d-a612d3fcf325.vhd"
+$urlOfCapturedImageVhd = "<이미지 파일의 FQDN 경로>"
+# "https://taeyostudy.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/template-osDisk.7a38ab93-9215-48b1-813d-a612d3fcf325.vhd"
+
 ###########################################################
 $osDiskName = $vmName + "_osDisk"
 $interfaceName = $vmname + "_Interface"
