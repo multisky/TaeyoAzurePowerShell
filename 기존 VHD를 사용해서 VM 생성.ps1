@@ -22,7 +22,7 @@ $interfaceName = $vmname + "_Interface"
 ###########################################################
 
 ## 구독 설정
-Get-AzureRmSubscription –SubscriptionName $subscriptionName | Select-AzureRmSubscription
+Select-AzureRmSubscription –SubscriptionName $subscriptionName
 
 ## 리소스그룹 살펴보기
 ## Get-AzureRmResourceGroup | ft ResourceGroupName, location
