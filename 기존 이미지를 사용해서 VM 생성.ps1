@@ -7,7 +7,7 @@ $subscriptionName = "<구독이름>" # "MyMSDN"
 $resourceGroupName = "<리소스 그룹 이름"> # "rg-jw-taeyo-study"
 $location = "<위치">  # japan west"
 $VNetName = "<가상 네트워크 이름>"  # vn-jw-taeyo-test"
-$storageAccountName = "taeyostudy"
+$storageAccountName = "<저장소 계정>"    # taeyostudy"
 
 ## 만들 VM의 이름과 크기
 $vmname = "<만들어질 VM 이름">     # "PlzRemove"
