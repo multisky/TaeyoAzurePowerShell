@@ -17,6 +17,9 @@
 - [Blob 파일을 다른 구독의 다른 저장소 계정으로 옮기는 방법](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/Blob%20%ED%8C%8C%EC%9D%BC%EC%9D%84%20%EB%8B%A4%EB%A5%B8%20%EA%B5%AC%EB%8F%85%EC%9D%98%20%EB%8B%A4%EB%A5%B8%20%EC%A0%80%EC%9E%A5%EC%86%8C%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C%20%EC%98%AE%EA%B8%B0%EB%8A%94%20%EB%B0%A9%EB%B2%95.ps1)
     - 저장소 키를 활용하여 구독 간에 Blob 파일을 이동하는 방법
     - 보유하고 있는 구독 간에만 사용하는 것이 좋음(저장소 키는 외부 공개하지 않는 것이 바람직함).
-
+- [리눅스 VM의 OS 디스크 Resize](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/%EB%A6%AC%EB%88%85%EC%8A%A4%20VM%EC%9D%98%20OS%20%EB%94%94%EC%8A%A4%ED%81%AC%20Resize.ps1)
+    - 이미 생성되어 있는 Linux의 OS 크기 변경하는 방법
+    - [원본 참고 링크는 여기임](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/05/24/step-by-step-how-to-resize-a-linux-vm-os-disk-in-azure-arm/)
+    
 ----
 도움 : [성지용](https://github.com/jiyongseong) 
