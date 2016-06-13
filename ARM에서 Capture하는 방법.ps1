@@ -4,8 +4,8 @@ Login-AzureRmAccount
 ###########################################################
 ## 이 부분은 직접 자신에 맞게 변수값을 설정해 줘야 한다.
 $subscr = "<구독이름>" # "MyMSDN"
-$resourceGroupName = "<리소스 그룹 이름"> # "rg-jw-taeyo-study"
-$vmname = "<만들어질 VM 이름">     # "PlzRemove"
+$resourceGroupName = "<리소스 그룹 이름>" # "rg-jw-taeyo-study"
+$vmname = "<만들어질 VM 이름>"     # "PlzRemove"
 ###########################################################
 
 $imageName = $vmname + "_CapturedImage"
