@@ -2,7 +2,7 @@
 Login-AzureRmAccount
 
 #####################################################
-# 이하 변수 설
+# 이하 변수 설정
 #####################################################
 # 구독 설정
 $subscr = "BizSpark"
@@ -10,7 +10,6 @@ Get-AzureRmSubscription –SubscriptionName $subscr | Select-AzureRmSubscription
 
 # 리소스그룹
 $rg = "dev-rg-jw-ftp"
-정
 # 변경할 네트워크 보안 그룹
 $nsg_name = "FtpSvr1-nsg"
 
