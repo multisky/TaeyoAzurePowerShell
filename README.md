@@ -20,9 +20,17 @@
 - [리눅스 VM의 OS 디스크 Resize](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/%EB%A6%AC%EB%88%85%EC%8A%A4%20VM%EC%9D%98%20OS%20%EB%94%94%EC%8A%A4%ED%81%AC%20Resize.ps1)
     - 이미 생성되어 있는 Linux의 OS 크기 변경하는 방법
     - [원본 참고 링크는 여기임](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/05/24/step-by-step-how-to-resize-a-linux-vm-os-disk-in-azure-arm/)
-- VM에 Endpoint를 동적으로 여러개 생성
-    - 사용 예 : 
-    $vm = Get-AzureVM -Name lbftp1 -ServiceName lbftpservers 
-    .\Add-AzureFtpEndpoints.ps1 $vm 21 10000 10050 
+- Azure VM을 FTP 서버로 활용하고 Azure File에 파일 저장하는 방법
+    - [VM에 Endpoint를 동적으로 여러개 생성 스크립트(ps)](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/VM%EC%97%90%20Endpoint%20%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0(for%20FTP).ps1)
+        - 사용 예
+        > $vm = Get-AzureVM -Name lbftp1 -ServiceName lbftpservers     
+        > .\Add-AzureFtpEndpoints.ps1 $vm 21 10000 10050
+
+    - 참고 문서
+        - [Deploying a load-balanced, high-available FTP Server with Azure Files](http://fabriccontroller.net/deploying-a-load-balanced-high-available-ftp-server-with-azure-files/)  
+        - [Installing Secure FTP Server on Microsoft Azure using IIS](https://winscp.net/eng/docs/guide_azure_ftps_server)    
+        - [Step-By-Step: Creating a File Share in Azure](https://blogs.technet.microsoft.com/canitpro/2014/09/22/step-by-step-creating-a-file-share-in-azure/)    
+
+
 ----
 도움 : [성지용](https://github.com/jiyongseong) 
