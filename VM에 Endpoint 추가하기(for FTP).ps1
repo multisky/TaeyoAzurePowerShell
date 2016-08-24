@@ -1,29 +1,36 @@
-﻿# Arguments.
-param  
-(
-    [Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVMRoleContext]$vm = $(throw "'vm' is required."),
-    [int]$publicPort = $(throw "'publicPort' is required."),
-    [int]$dynamicPortFirst = $(throw "'dynamicPortFirst' is required."),
-    [int]$dynamicPortLast = $(throw "'dynamicPortLast' is required.")
-)
+﻿
+Login-AzureRmAccount
 
-$totalPorts = $dynamicPortLast - $dynamicPortFirst + 1
-if ($totalPorts -gt 150)  
-{
-    $(throw "You cannot add more than 150 endpoints (this includes the Public FTP Port)")
-}
+#####################################################
+# 이하 변수 설
+#####################################################
+# 구독 설정
+$subscr = "BizSpark"
+Get-AzureRmSubscription –SubscriptionName $subscr | Select-AzureRmSubscription
 
-# Add endpoints.
-Write-Host -Fore Green "Adding: FTP-Public-$publicPort"  
-Add-AzureEndpoint -VM $vm -Name "FTP-Public-$publicPort" -Protocol "tcp" -PublicPort $publicPort -LocalPort $publicPort -LBSetName "FTP-LB" -ProbePort $publicPort -ProbeProtocol "tcp"  
+# 리소스그룹
+$rg = "dev-rg-jw-ftp"
+정
+# 변경할 네트워크 보안 그룹
+$nsg_name = "FtpSvr1-nsg"
+
+# 추가할 포트(시작과 끝)
+$dynamicPortFirst = 10000
+$dynamicPortLast = 10002
+
+#####################################################
+$priority = 1000
+
 for ($i = $dynamicPortFirst; $i -le $dynamicPortLast; $i++)  
 {
     $name = "FTP-Dynamic-" + $i
+    $priority = $priority + 1 
+    Get-AzureRmNetworkSecurityGroup -Name $nsg_name -ResourceGroupName $rg | `
+        Add-AzureRmNetworkSecurityRuleConfig -Name $name -Direction Inbound -Priority $priority `
+        -Access Allow -SourceAddressPrefix '*'  -SourcePortRange '*' -DestinationAddressPrefix '*' `
+        -DestinationPortRange $i -Protocol 'TCP' -Description "Allow FTP" | `
+        Set-AzureRmNetworkSecurityGroup
+
     Write-Host -Fore Green "Adding: $name"
-    Add-AzureEndpoint -VM $vm -Name $name -Protocol "tcp" -PublicPort $i -LocalPort $i
 }
 
-# Update VM.
-Write-Host -Fore Green "Updating VM..."  
-$vm | Update-AzureVM
-Write-Host -Fore Green "Done."  
