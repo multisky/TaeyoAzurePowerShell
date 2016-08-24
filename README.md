@@ -20,6 +20,9 @@
 - [리눅스 VM의 OS 디스크 Resize](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/%EB%A6%AC%EB%88%85%EC%8A%A4%20VM%EC%9D%98%20OS%20%EB%94%94%EC%8A%A4%ED%81%AC%20Resize.ps1)
     - 이미 생성되어 있는 Linux의 OS 크기 변경하는 방법
     - [원본 참고 링크는 여기임](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/05/24/step-by-step-how-to-resize-a-linux-vm-os-disk-in-azure-arm/)
-
+- VM에 Endpoint를 동적으로 여러개 생성
+    - 사용 예 : 
+    $vm = Get-AzureVM -Name lbftp1 -ServiceName lbftpservers 
+    .\Add-AzureFtpEndpoints.ps1 $vm 21 10000 10050 
 ----
 도움 : [성지용](https://github.com/jiyongseong) 
