@@ -21,7 +21,7 @@
 - [리눅스 VM의 OS 디스크 Resize](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/%EB%A6%AC%EB%88%85%EC%8A%A4%20VM%EC%9D%98%20OS%20%EB%94%94%EC%8A%A4%ED%81%AC%20Resize.ps1)
     - 이미 생성되어 있는 Linux의 OS 크기 변경하는 방법
     - [원본 참고 링크는 여기임](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/05/24/step-by-step-how-to-resize-a-linux-vm-os-disk-in-azure-arm/)
-
-
+- [VM의 NSG에 규칙 추가 스크립트(ps)](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/VM%EC%9D%98%20NSG%EC%97%90%20%EA%B7%9C%EC%B9%99%20%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0.ps1)
+    - 스크립트로 원하는 포트들을 한번에 개방
 ----
 도움 : [성지용](https://github.com/jiyongseong) 
