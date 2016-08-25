@@ -17,19 +17,15 @@ $nsg_name = "FtpSvr1-nsg"
 $dynamicPortFirst = 10000
 $dynamicPortLast = 10002
 
-#####################################################
 $priority = 1000
+$destinationPortRange = "$dynamicPortFirst-$dynamicPortLast"
+$name = "FTP-Dynamic-$destinationPortRange"
 
-for ($i = $dynamicPortFirst; $i -le $dynamicPortLast; $i++)  
-{
-    $name = "FTP-Dynamic-" + $i
-    $priority = $priority + 1 
-    Get-AzureRmNetworkSecurityGroup -Name $nsg_name -ResourceGroupName $rg | `
-        Add-AzureRmNetworkSecurityRuleConfig -Name $name -Direction Inbound -Priority $priority `
-        -Access Allow -SourceAddressPrefix '*'  -SourcePortRange '*' -DestinationAddressPrefix '*' `
-        -DestinationPortRange $i -Protocol 'TCP' -Description "Allow FTP" | `
-        Set-AzureRmNetworkSecurityGroup
+Get-AzureRmNetworkSecurityGroup -Name $nsg_name -ResourceGroupName $rg | `
+    Add-AzureRmNetworkSecurityRuleConfig -Name $name -Direction Inbound -Priority $priority `
+    -Access Allow -SourceAddressPrefix '*'  -SourcePortRange '*' -DestinationAddressPrefix '*' `
+    -DestinationPortRange $destinationPortRange -Protocol 'TCP' -Description "Allow FTP" | `
+    Set-AzureRmNetworkSecurityGroup
 
-    Write-Host -Fore Green "Adding: $name"
-}
+Write-Host -Fore Green "Adding: $name"
 
