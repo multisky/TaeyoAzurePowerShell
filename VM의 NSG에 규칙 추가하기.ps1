@@ -17,9 +17,9 @@ $nsg_name = "FtpSvr1-nsg"
 $dynamicPortFirst = 10000
 $dynamicPortLast = 10002
 
-$priority = 1000
+$priority = 1001
 $destinationPortRange = "$dynamicPortFirst-$dynamicPortLast"
-$name = "FTP-Dynamic-$destinationPortRange"
+$name = "FTP-$destinationPortRange"
 
 Get-AzureRmNetworkSecurityGroup -Name $nsg_name -ResourceGroupName $rg | `
     Add-AzureRmNetworkSecurityRuleConfig -Name $name -Direction Inbound -Priority $priority `
@@ -28,4 +28,3 @@ Get-AzureRmNetworkSecurityGroup -Name $nsg_name -ResourceGroupName $rg | `
     Set-AzureRmNetworkSecurityGroup
 
 Write-Host -Fore Green "Adding: $name"
-
