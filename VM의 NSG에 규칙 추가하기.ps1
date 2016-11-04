@@ -5,8 +5,7 @@ Login-AzureRmAccount
 # 이하 변수 설정
 #####################################################
 # 구독 설정
-$subscr = "BizSpark"
-Get-AzureRmSubscription –SubscriptionName $subscr | Select-AzureRmSubscription
+$subscr = "<your subscription>"
 
 # 리소스그룹
 $rg = "dev-rg-jw-ftp"
@@ -17,7 +16,12 @@ $nsg_name = "FtpSvr1-nsg"
 $dynamicPortFirst = 10000
 $dynamicPortLast = 10002
 
+# Priority
 $priority = 1001
+#####################################################
+
+Get-AzureRmSubscription –SubscriptionName $subscr | Select-AzureRmSubscription
+
 $destinationPortRange = "$dynamicPortFirst-$dynamicPortLast"
 $name = "FTP-$destinationPortRange"
 
