@@ -2,10 +2,10 @@
 
 >개인적으로 필요에 의해 만들어 놓은 Azure PowerShell 샘플들
 
-- [Create VM with Managed OS Disk](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/ManagedDisk-AttachOSDisk.ps1)
+- [(Managed Disk) Create VM with Managed OS Disk](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/ManagedDisk-AttachOSDisk.ps1)
     - 이미 OS용으로 사용할 Managed Disk를 가지고 있다면, 그를 사용하여 VM을 생성하는 스크립트.
     - 기존 Virtual Network나 Subnet이 존재할 경우 그 이름을 기입하면 그 네트워크 안에서 VM이 생성된다.
-- [Attach Managed Data Disk to VM](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/ManagedDisk-AttachDataDisk.ps1)
+- [(Managed Disk) Attach Managed Data Disk to VM](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/ManagedDisk-AttachDataDisk.ps1)
     - 이미 Data 디스크 용으로 사용할 Managed Disk를 가지고 있다면, 그를 VM에 첨부하는 스크립트
 - [기존 VHD를 사용해서 VM(V2-ARM) 생성](https://github.com/taeyo/TaeyoAzurePowerShell/blob/master/%EA%B8%B0%EC%A1%B4%20VHD%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C%20VM%20%EC%83%9D%EC%84%B1.ps1)
     - 기존 VM에서 분리된 VHD 파일(sysprep되지 않은 상태)을 사용하여 VM을 만드는 경우를 위한 예제
