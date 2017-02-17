@@ -8,9 +8,9 @@ Login-AzureRmAccount
 $subscr = "<your subscription>"
 
 # 리소스그룹
-$rg = "dev-rg-jw-ftp"
+$rg = '<resource group name>'  # ex : dev-rg-jw-ftp
 # 변경할 네트워크 보안 그룹
-$nsg_name = "FtpSvr1-nsg"
+$nsg_name = '<Network Security Group Name>'  # ex : FtpSvr1-nsg
 
 # 추가할 포트(시작과 끝)
 $dynamicPortFirst = 10000
