@@ -89,7 +89,7 @@ $osDisk = Get-AzureRmDisk -ResourceGroupName $rgName -DiskName $osDiskName
 
 # Configure the OS disk
 $vm = Set-AzureRmVMOSDisk -VM $vm -ManagedDiskId $osDisk.Id -StorageAccountType StandardLRS `
- -DiskSizeInGB 128 -CreateOption Attach -Windows
+ -DiskSizeInGB 128 -CreateOption Attach -Windows -Caching ReadWrite 
 
 #Create the new VM
 write-Host "'$newVmName' VM is creating..." -ForegroundColor Green
